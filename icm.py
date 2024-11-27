@@ -32,4 +32,4 @@ ICM = af_avg**2 - G2
 plt.imshow(ICM,cmap='hot')
 plt.axis("Off")
 plt.show()
-#plt.imsave("ICM.png",ICM,cmap='hot')
+#plt.imsave("results/ICM.png",ICM,cmap='hot')
