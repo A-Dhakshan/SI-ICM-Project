@@ -20,13 +20,13 @@ window = np.sqrt(np.outer(window1d,window1d))
 for i in range(25):
     plt.imsave(f'raw_files/frame{i}.png',y[i],cmap='hot')
 
-plt.imsave('psf.png',psf,cmap='hot')
+plt.imsave('raw_files/psf.png',psf,cmap='hot')
 
 deconvolved = np.zeros((64,64))
-psf = plt.imread('psf.png')[:,:,0]
+psf = plt.imread('raw_files/psf.png')[:,:,0]
 
 for i in range(25):
-    dec = deconvwnr(plt.imread(f'frame{i}.png')[:,:,0],psf,0.05)
+    dec = deconvwnr(plt.imread(f'raw_files/frame{i}.png')[:,:,0],psf,0.05)
     dec /= dec.max()
     deconvolved += dec
 
