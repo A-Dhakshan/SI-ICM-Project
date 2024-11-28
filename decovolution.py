@@ -11,7 +11,7 @@ WF = tifffile.imread('raw_files/widefield.tif')
 for i in range(25):
     y[i] /= y[i].max()
 
-psf = psf[8,:,:]
+psf = psf[8,:,:]   #should be 6 for norrmal sim 'reconstruct.tif'
 psf /= psf.max()
 
 window1d = np.abs(sg.windows.triang(64))
