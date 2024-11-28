@@ -4,9 +4,9 @@ import tifffile
 from deconvwnr import *
 from scipy import fft
 
-y = tifffile.imread('reconstruct_icm.tif')
-psf = tifffile.imread('PSF RW.tif')
-WF = tifffile.imread('widefield.tif')
+y = tifffile.imread('raw_files/reconstruct_icm.tif')
+psf = tifffile.imread('raw_files/PSF RW.tif')
+WF = tifffile.imread('raw_files/widefield.tif')
 
 for i in range(25):
     y[i] /= y[i].max()
@@ -18,7 +18,7 @@ window1d = np.abs(sg.windows.triang(64))
 window = np.sqrt(np.outer(window1d,window1d))
 
 for i in range(25):
-    plt.imsave(f'frame{i}.png',y[i],cmap='hot')
+    plt.imsave(f'raw_files/frame{i}.png',y[i],cmap='hot')
 
 plt.imsave('psf.png',psf,cmap='hot')
 
@@ -41,5 +41,5 @@ fig.add_subplot(1,2,2)
 plt.imshow(windowed,cmap='hot')
 plt.tight_layout()
 plt.axis("Off")
-plt.imsave("SIM_ICM.png",windowed,cmap='hot')
+plt.imsave("results/SIM_ICM.png",windowed,cmap='hot')
 plt.show()
