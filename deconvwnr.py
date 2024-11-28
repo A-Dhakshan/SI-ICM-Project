@@ -2,11 +2,6 @@ import numpy as np
 from scipy import fft
 from scipy import signal as sg
 
-window1d = np.abs(sg.windows.triang(64))
-window = np.sqrt(np.outer(window1d,window1d))
-
-#scipy triangular apodization function. needs to be modified to fit my values
-
 def zero_pad(image, shape, position='corner'):
     shape = np.asarray(shape, dtype=int)
     imshape = np.asarray(image.shape, dtype=int)
