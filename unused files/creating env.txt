@@ -1,0 +1,15 @@
+Follow this procedure for windows
+
+> python -m venv env_name
+> .\env_name\Scripts\activate
+
+
+Procedure to uninstall all packages in an environment. This leave only pip
+
+pip freeze > requirements.txt
+
+Now to remove one by one
+pip uninstall -r requirements.txt
+
+If we want to remove all at once then
+pip uninstall -r requirements.txt -y
