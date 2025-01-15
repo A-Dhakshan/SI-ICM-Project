@@ -1,6 +1,8 @@
 Follow this procedure for windows
 
-> python -m venv env_name
+After installing python, Go to -> "start" and type "Manage App Execution Aliases". Go to it and turn off (both) "Python". Then in terminal
+
+> py -m venv env_name
 > .\env_name\Scripts\activate
 
 
