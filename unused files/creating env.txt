@@ -1,6 +1,10 @@
 Follow this procedure for windows
 
-After installing python, Go to -> "start" and type "Manage App Execution Aliases". Go to it and turn off (both) "Python". Then in terminal
+After installing python, Go to -> "start" and type "Manage App Execution Aliases". Go to it and turn off (both) "Python". Also, 
+"Run as administrator" Terminal and set
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+
+To create and activate an environment in terminal
 
 > py -m venv env_name
 > .\env_name\Scripts\activate
