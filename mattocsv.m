@@ -1,3 +1,7 @@
+%Code used to convert the .mat output of SOFI simulation tool to .csv format so that it can be processed
+%using python. Use the for loop for batch convert. For single file, use the single convert part. Don't make
+%changes to the other parts of the code. 
+
 %for i = 0:24
 %importfile1(sprintf("sim%d.mat",i))
 %writematrix(stacks_discrete,sprintf('sim%d.csv',i))
