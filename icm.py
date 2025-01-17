@@ -8,15 +8,18 @@ with open("raw_files/2pixel_icm.csv") as csvfile: #this is the file containing t
     for row in reader: # each row is a list
         results.append(row)
         
-results = np.asarray(results)
+results = np.asarray(results) # converts the list to a numpy array
 image = np.zeros([64,64,200])
+
+# converts the result to appropriate shape more convenient for further processing
 for i in range(200):
-    a = results[:,(i*64):(i*64)+64]
+    a = results[:,(i*64):(i*64)+64] 
     image[:,:,i] = a
 
-af_avg = image.mean(axis=2)
+af_avg = image.mean(axis=2) #average of all 200 frames
 
 DF = []
+# intensity correlation calculations. Refer to the report for the steps.
 for i in range(200):
     df = image[:,:,i] - af_avg
     DF.append(df)
